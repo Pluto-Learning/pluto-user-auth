@@ -1,6 +1,6 @@
 # Pluto Learning User and Authentication Service
 
-This is the user management and authentication service for the Pluto Learning platform.
+This a backend service to handle user management and authentication/authorization for the Pluto learning platform.
 
 ---
 
