@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import List, Optional
 from bson import ObjectId
 from motor.motor_asyncio import AsyncIOMotorDatabase
 
@@ -13,6 +13,9 @@ class UserService:
         
     async def user(self, username: str) -> Optional[User]:
         return await self.repo.find(username)
+    
+    async def user_all(self) -> Optional[List[User]]:
+        return await self.repo.find_all()
     
     async def user_by_email(self, email: str) -> Optional[User]:
         return await self.repo.find_by_email(email)

@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import List, Optional
 from bson import ObjectId
 from fastapi import HTTPException
 from motor.motor_asyncio import AsyncIOMotorDatabase
@@ -14,6 +14,10 @@ class UserRepository:
         
     async def find(self, username: str) -> Optional[User]:
         data: User = await self.db.find_one({'username': username})
+        return data if data else None
+    
+    async def find_all(self) -> Optional[List[User]]:
+        data: List[User] = await self.db.find().to_list(length=None)
         return data if data else None
     
     async def find_by_email(self, email: str) -> Optional[User]:
