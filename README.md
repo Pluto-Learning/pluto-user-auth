@@ -65,11 +65,37 @@ This a backend service to handle user management and authentication/authorizatio
 
 ## API Documentation
 
-- Default Url: <http://localhost:2000>
+- Default Local Url: <http://localhost:2000/api/v1>
+
+- Success Response Body
+
+```json
+{
+    "code": 200,
+    "message": "",
+    "body": {}
+}
+```
+
+- Error Response Body
+
+```json
+{
+    "details": ""
+}
+```
 
 - Base Endpoints
 
 ```bash
-[GET] /api/v1
-[GET] /api/v1/health
+[GET] /         param -> none
+[GET] /health   param -> none
+```
+
+- User Login/Register Routes
+
+```bash
+[GET]  /user/           param -> username
+[GET]  /user/login      param -> email, password
+[POST] /user/register   param -> body
 ```
