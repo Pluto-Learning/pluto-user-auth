@@ -1,4 +1,8 @@
+import os
+from dotenv import load_dotenv
 from pydantic import BaseSettings
+
+load_dotenv()
 
 class Settings(BaseSettings):
     TITLE: str = "Pluto Core API"
@@ -14,5 +18,9 @@ class Settings(BaseSettings):
     ]
     ALLOWED_METHODS: list[str] = ["*"]
     ALLOWED_HEADERS: list[str] = ["*"]
+    
+    MONGO_URL: str = os.getenv("MONGO_URL")
+    SALT: str = os.getenv("SALT")
+    JWT_KEY: str = os.getenv("JWT_KEY")
     
 settings: Settings = Settings()

@@ -1,10 +1,11 @@
 from fastapi import APIRouter, FastAPI
 
 from src.infastructure.config.environment.base import settings
-from src.api.endpoints import base
+from src.api.endpoints import base, user
 
 def load_routes(router: APIRouter) -> APIRouter:
     router.include_router(router=base.router)
+    router.include_router(router=user.router, prefix='/user')
     return router
 
 def init_api() -> FastAPI:
