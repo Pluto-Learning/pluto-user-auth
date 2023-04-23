@@ -94,9 +94,11 @@ This a backend service to handle user management and authentication/authorizatio
 
 - User Login/Register Routes
 
+> **Note**: Due to FastApi's routing and path parameter handling, all user routes will need to have a **trailing forward slash** at the end of the url path. **Example**: `/user/login/?email=example&password=example`
+
 ```bash
-[GET]  /user/all        param -> none
+[GET]  /user/all/        param -> none
 [GET]  /user/           param -> username
-[GET]  /user/login      param -> email, password
-[POST] /user/register   param -> body
+[GET]  /user/login/      param -> email, password
+[POST] /user/register/   param -> body
 ```
