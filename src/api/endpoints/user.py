@@ -1,11 +1,9 @@
-from fastapi import APIRouter, Depends, HTTPException, Request
+from fastapi import APIRouter, HTTPException, Request
 from typing import Dict, Any, List
-from motor.motor_asyncio import AsyncIOMotorDatabase
 
 from src.api.endpoints.wrapper import ResBody
 from src.domain.user.model import User, UserCreate, UserRes, parse_user
 from src.domain.user.service import UserService
-from src.infastructure.database.mongo import get_client
 from src.infastructure.security.password import validate_psw
 
 router = APIRouter()

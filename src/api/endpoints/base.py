@@ -1,10 +1,7 @@
 from fastapi import APIRouter
 from typing import Dict, Any
-from motor.motor_asyncio import AsyncIOMotorDatabase
-from src.domain.user.model import User
 
 from src.infastructure.config.environment.base import settings
-from src.infastructure.database.mongo import get_client
 
 router = APIRouter()
 
