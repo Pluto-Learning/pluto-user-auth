@@ -95,6 +95,7 @@ This a backend service to handle user management and authentication/authorizatio
 - User Login/Register Routes
 
 ```bash
+[GET]  /user/all        param -> none
 [GET]  /user/           param -> username
 [GET]  /user/login      param -> email, password
 [POST] /user/register   param -> body
